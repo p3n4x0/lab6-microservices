@@ -12,35 +12,35 @@ This document contains a brief of how the following activities have been accompl
 ## Steps
 - First step is to run `registration` service.
   `./gradlew registration:bootRun`.
-![Cap1.png](/images/Cap1.png)
+![Cap1.png](/docs/images/Cap1.png)
 
 - Second step is to run `web` service
   `./gradlew web:bootRun`.
-![Cap2.png](/images/Cap2.png)
+![Cap2.png](/docs/images/Cap2.png)
 
 - Third step is to run `accounts(2222)` service.
   `./gradlew accounts:bootRun`.
-![Cap3.png](/images/Cap3.png)
+![Cap3.png](/docs/images/Cap3.png)
 
 - Make sure all services have been launched correctly. To try it out we type localhost:1111 in 
 the browser, where Eureka is allocated. And then, we can see both services (``accounts`` and ``web``) are allocated 
 in Eureka(``registration``)
-![Cap4.png](/images/Cap4.png)
+![Cap4.png](/docs/images/Cap4.png)
 
 - Then we add a second accounts service instance, using the port 4444.
-![Cap5.png](/images/Cap5.png)
+![Cap5.png](/docs/images/Cap5.png)
 
     Run it
-    ![Cap6.png](/images/Cap6.png)
+    ![Cap6.png](/docs/images/Cap6.png)
     
     
     Then both ``accounts`` services will appear in Eureka
-    ![Cap7.png](/images/Cap7.png)
+    ![Cap7.png](/docs/images/Cap7.png)
 
 
 - Last step, kill ``accounts(2222)`` and then make request to web
-![Cap8.png](/images/Cap8.png)
-![Cap9.png](/images/Cap9.png)
+![Cap8.png](/docs/images/Cap8.png)
+![Cap9.png](/docs/images/Cap9.png)
 
 Request didn't fail because web is not only looking for accounts(2222), it is looking for accounts service in general. 
 Despite we had killed accounts(2222), accounts(4444) was still alived and ``web`` did the request to that microservice.
